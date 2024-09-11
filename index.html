@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+    <script src="https://kit.fontawesome.com/0f8336e200.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="background-animation"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div> 
+        <div class="container">
+            <nav>
+                <img src="images/4.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <div class="profile-pic">
+                    <img src="images/Photo 1.jpeg" alt="Profile Picture">
+                </div>
+            <h3>Hi,there</h3>
+               <h1>I am <span class="typewriter" id="typewriter1"></span></h1>
+                        <p><br>Welcome to my portfolio.<br> I’m <span style="color: hwb(318 7% 24%);"><b>Antony Munene</b></span>, a dedicated software engineer and cybersecurity analyst with expertise in both frontend and backend development.<br> My work spans the full stack of application development, encompassing the design and implementation of robust and secure solutions. <br>Explore my projects to see how I integrate these skills to deliver exceptional results.</br></p>
+            </div>
+        </div>
+        <div class="header-cta">
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        </div>    
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/logo 2.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am Antony Munene, also known by my nickname Cyberbard, a Computer Science graduate from Karatina University, specializing in Cybersecurity and Software Engineering. Hailing from Meru, Kenya, I am passionate about leveraging technology to solve complex problems and safeguard digital assets. With a strong foundation in software development and a keen interest in the latest cybersecurity trends, I am dedicated to excellence and continuous learning. My skills in programming, analytical thinking, and effective communication enable me to collaborate with diverse teams and contribute to the advancement of secure and innovative technological solutions.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>On Packages</span><br>Excel.<br> PowerPoint.<br> Word.<br> Office point.<br> Notepad.<br> Typing - Good speed with Keyboard.</li>
+                            <li><span>Designing</span><br>Websites.<br>Posters.<br>Menus.<br>Catalouges.<br>Banners.<br>3D and 2D logos.<br>Business cards.</li>
+                            <li><span>Coding</span><br>C, C++, Java, JavaScript, HTML, CSS, PHP, Python.</li>
+                            <li><span>Database Management</span><br>MySQL, Java, Python.</li>
+                            <li><span>Machine Learning</span><br>Java, Python.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024-current</span><br>REACT programming, Data mining and Science</li>
+                            <li><span>2023</span><br>Python programming, Web designing and Web Developing</li>
+                            <li><span>2022</span><br>Java, JavaScript, HTML, CSS, PHP programming.</li>
+                            <li><span>2020-2021</span><br>C and C++ programming.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023</span><br>KARATINA  UNIVERSITY.<br> Bachelor of Computer Science.<br> 2021 – Present.</li>
+                            <li><span>2021</span><br>MAGENKA SECONDARY SCHOOL.<br>Kenya Certificate of Secondary Education. (AGP 62 [B])<br>2016 – 2021.</li>
+                            <li><span>2016</span><br>WIRU PRIMARY SCHOOL.<br> Kenya Certificate of Primary Education. (Total Marks[350]).<br>2005 – 2015.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="projects">
+                        <ul>
+                            <li><span>CYBERBARD Portfolio</span><br>Developed a full-stack web application using Visual Studio. Implemented user authentication, skills, experiences, hobbies, and contact functionality. Deployed on TRUE HOST.</li>
+                            <li><span>ONLINE QUIZ APP</span><br>Designed a Java-based online quiz app system. Utilized object-oriented principles to model different types of course and questions and studying platform management operations. Implemented features such as product search, addition, deletion, and question tracking.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fas fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>We provide web design services for various clients. Contact us for your custom web design needs.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-crop-alt"></i>
+                    <h2>App Design</h2>
+                    <p>We offer app design services tailored to client specifications. Get in touch to discuss your project.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fab fa-python"></i>
+                    <h2>Coding</h2>
+                    <p>Proficient in various programming languages including C, C++, Java, JavaScript, HTML, CSS, PHP, and Python.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/4 (2).png" alt="">
+                    <div class="layer">
+                        <h3>Mobile apps</h3>
+                        <p>We create mobile apps to enhance user friendly interactions. Download our app from the Play Store.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/2.png" alt="">
+                    <div class="layer">
+                        <h3>Design Work</h3>
+                        <p>We handle all types of design projects. Contact us for custom design services.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/1.png" alt="">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>We developed an online shopping app for easy marketing. Download it from the Play Store.</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="More of me.html" class="btn">See More</a>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> cyberbard745@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i> 0793001086 / 0775790271</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/crazlyen.nexh.7/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/Tonnie_01"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/_draper.08/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a href="https://chat.whatsapp.com/+254793001086"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <a href="images/ANTONY MUNENE @cyberbard.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form action="contact.php" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; Cyberbard <i class="fas fa-heart"></i> .....If you can think it, we can make it.</p>
+            <ul class="social">
+                <li class="twitter"><a href="https://x.com/Tonnie_01">Follow us on Twitter</a></li>
+                <li class="facebook"><a href="https://www.facebook.com/crazlyen.nexh.7/">Like us on Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const words1 = ['cyberbard.','a software engineer.', 'also a cybersecurity analyst.'];
+        function typeWriter(element, words) {
+          let wordIndex = 0;
+          let letterIndex = 0;
+          let currentWord = words[wordIndex];
+      
+          function type() {
+            if (letterIndex < currentWord.length) {
+              element.textContent += currentWord.charAt(letterIndex);
+              letterIndex++;
+              setTimeout(type, 100);
+            } else {
+              setTimeout(() => {
+                deleteLetters();
+              }, 1000);
+            }
+          }
+      
+          function deleteLetters() {
+            if (letterIndex > 0) {
+              element.textContent = currentWord.substring(0, letterIndex - 1);
+              letterIndex--;
+              setTimeout(deleteLetters, 50);
+            } else {
+              wordIndex = (wordIndex + 1) % words.length;
+              currentWord = words[wordIndex];
+              setTimeout(type, 500);
+            }
+          }
+      
+          type();
+        }
+      
+        typeWriter(document.getElementById('typewriter1'), words1);
+      </script>
+    <script>
+        function openmenu() {
+            document.getElementById("sidemenu").style.right = "0";
+        }
+        
+        function closemenu() {
+            document.getElementById("sidemenu").style.right = "-200px";
+        }
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (let tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (let tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <div id="backToTop">
+        <a href="#header"><i class="fas fa-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript to Show/Hide the Button -->
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('header');
+            var backToTop = document.getElementById('backToTop');
+            
+            if (window.pageYOffset > header.offsetHeight) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
+    
+</body>
+</html>

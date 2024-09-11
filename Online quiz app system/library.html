@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- google icons eg ig na twitter-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- swiper css link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- font awesome 4 cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- header section starts  -->
+    <header class="header">
+        <a href="#" class="logo"><span>QUIZ APP</span></a>
+
+        <nav class="navbar">
+            <a href="#">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#books">BOOKS</a>
+            <a href="welcome.php">BACK</a>
+            <a href="index.php">Logout</a>
+        </nav>
+
+        <div class="icons">
+            <i id="menu-btn" class="fas fa-bars"></i>
+        </div>
+    </header>
+    <!-- header section ends -->
+
+    <section class="image_1">
+        <div class="image_1row">
+            <div class="banner">
+                <img style="background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(images/bg.jpg);">
+                <p style="color:aqua;" class="heading">THE BEST BOOKS IN THE VERY BEST </br> PROGRAMMING LANGUAGES<br>
+                    <span style="  color:rgba(255, 255, 255, 0.925);
+                font-size: 2.2rem;
+                font-weight: 700;">Feel free to read and download the books</span>
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+        <section class="inform_about" id="about">
+            <div class="exer">
+                <h3 style="color: rgba(63,6,96,0.925);">ABOUT</h3>
+                <div>
+                    <img src="images/about2.jpg" />
+                </div>
+                <div class="exer-content">
+                    <p>
+                        <h1>About the web and description <b>"Best books"</b>?</h1>
+                        <br><br>
+                        <h3>Quiz web for learners & <span>Examiners</span></h3>
+                        <p>Quiz web is a website where an examiners sets and tests his or her 
+                            students in different fields of study. For instance in the school of science 
+                            and computing, a lecturer can set different tests e.g programming tests
+                            graphics tests, mathematics tests etc. We love to assure you that
+                            this website is the most secured means of testing your knowledgeand IQ.
+                            Welcome to quiz web.</p>
+                        </p>
+                        <h1>Corporate and Government Sales</h1>
+                            <p>The publisher offers excellent discounts on this book when ordered in quantity for bulk purchases or special
+                            sales, which may include electronic versions and/or custom covers and content particular to your business, train
+                           ing goals, marketing focus, and branding interests. </br>For more information, please contact:
+                            U.S. Corporate and Government Sales    1-800-382-3419    corpsales@pearsontechgroup.com
+                            For sales outside the United States please contact:
+                            International Sales international@pearsoned.com</p>
+                            <h1>Feedback Information</h1>
+                            <p>At Cisco Press, our goal is to create in-depth technical books of the highest quality and value. Each book is
+                            crafted with care and precision, undergoing rigorous development that involves the unique expertise of members
+                            from the professional technical community.</br>
+                            Readers’ feedback is a natural continuation of this process. If you have any comments regarding how we could
+                            improve the quality of this book, or otherwise alter it to better suit your needs, you can contact us through email
+                            at feedback@ciscopress.com. Please make sure to include the book title and ISBN in your message.
+                            We greatly appreciate your assistance</p>
+
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!--quiz grid starts-->
+        <section class="q-grid" id="qg">
+
+            <h2 class="q-head" id="books" style="color: rgba(63,6,96,0.925);">BOOKS AVAILABLE</h2>
+
+            <div class="q-boxcontain">
+                <div class="q-contain">
+                    <img src="images/networking.jpg" alt="" class="image">
+                    <div class="contents">
+                        <h3>NETWORKING BASED BOOK</h3>
+                        <p> This book is designed to provide information about the Cisco Network Fundamentals CCNA Exploration course.
+                            Every effort has been made to make this book as complete and as accurate as possible, but no warranty or fitness
+                            is implied.
+                            <!-- The information is provided on an “as is” basis. The authors, Cisco Press, and Cisco Systems, Inc., shall have
+                            neither liability nor responsibility to any person or entity with respect to any loss or damages arising from the
+                            information contained in this book or from the use of the discs or programs that may accompany it.</p> -->
+                        <div class="box-text">
+                            <a href="books/networking.pdf" style="color:#fff;"><button id="btn">Download</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="q-contain">
+                    <img src="images/cbook.jpg" alt="" class="image">
+                    <div class="contents">
+                        <h3>C PROGRAMMING book</h3>
+                        <p>This guide covers essential concepts of C programming, from basic variables to advanced topics like pointers and memory management. 
+                            It includes exercises and programming challenges and covers all aspects of the C language, including the latest features of the C11 standard. 
+                            Suitable for both novice and experienced programmers..</p>
+                        <div class="box-text">
+                            <a href="books/cbook.pdf" style="color:#fff;"><button id="btn">Download</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="q-contain">
+                    <img src="images/javabook.jpg" alt="" class="image">
+                    <div class="contents">
+                        <h3>HEAD FIRST JAVA , 3RD EDITION BOOK</h3>
+                        <p>Head First Java, 3rd Edition by Kathy Sierra and Bert Bates is a popular and innovative Java book. 
+                            It covers a wide range of topics and uses various techniques to help readers learn, including visual aids, 
+                            humor, and real-world examples. It is great for beginners and experienced programmers, and 
+                            includes numerous exercises and projects to practice what you've learned. 
+                            It is a must-read book for anyone interested in learning Java.</p>
+                        <div class="box-text">
+                            <a href="books/java.pdf" style="color:#fff;"><button id="btn">Download</button></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="q-contain">
+                    <img src="images/c++.jpg" alt="" class="image">
+                    <div class="contents">
+                        <h3>C++ BOOK</h3>
+                        <p>C++ is a general-purpose programming language that is used for a wide variety of tasks, 
+                            including operating systems, embedded systems, games, and web development. 
+                            It is a powerful and efficient language, but it can also be complex to learn.</p>
+                        <div class="box-text">
+                            <a href="books/c++book.pdf" style="color:#fff;"><button id="btn">Download</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="q-contain">
+                    <img src="images/pythorn.jpg" alt="" class="image">
+                    <div class="contents">
+                        <h3>PYTHON BOOK</h3>
+                        <p>Python is an incredibly versatile programming language that has found wide-ranging applications in web development, 
+                            data science, machine learning, and AI.  Due to its easy-to-understand syntax and powerful capabilities, 
+                            developers of all levels of experience have found Python to be an excellent tool for their projects..</p>
+                        <div class="box-text">
+                            <a href="books/python.pdf" style="color:#fff;"><button id="btn">Download</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="q-contain">
+                    <img src="images/linux.jpg" alt="" class="image">
+                    <div class="contents">
+                        <h3>BEST LINUX BOOK 2023</h3>
+                        <p><strong>This document contains slides from the lecture, formatted to be suitable for printing or individual
+                            reading, and with some supplemental explanations added. It is intended as a supplement to,
+                            rather than a replacement for, the lectures themselves — you should not expect the notes to be
+                            self-contained or complete on their own.</strong> </p>
+                        <div class="box-text">
+                            <a href="books/linux basics.pdf" style="color:#fff;"><button id="btn">Download</button></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="q-contain">
+                    <img src="images/csharp1.png" alt="" class="image">
+                    <div class="contents">
+                        <h3>C# 2023 BOOK</h3>
+                        <p><strong>This document contains slides from the lecture, formatted to be suitable for printing or individual
+                            reading, and with some supplemental explanations added. It is intended as a supplement to,
+                            rather than a replacement for, the lectures themselves — you should not expect the notes to be
+                            self-contained or complete on their own</strong> </p>
+                        <div class="box-text">
+                            <a href="books/csharp.pdf" style="color:#fff;"><button id="btn">Download</button></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!--quiz grid ends-->
+
+
+
+        <!-- copyright section -->
+        <div class="credits">
+            <p>@ Quiz app 2023exams <i class="fas fa-heart"></i> work together.</p>
+            <p>
+            <h2>Best exams website. Open Source Project | All Just for you.</h2>
+            </p>
+        </div>
+
+        <script src="javascript/main.js"></script>
+
+</body>
+
+</html>

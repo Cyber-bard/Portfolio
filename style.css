@@ -44,8 +44,6 @@ body {
     left: 0;
     width: 100%;
     height: 20%; /* Height of the gradient overlay (adjust as needed) */
-    background: linear-gradient(to top, rgb(0, 0, 5) 0%, rgba(0, 0, 17, 1) 40%, transparent 50%, transparent 100%),
-    repeating-linear-gradient(45deg, rgb(0, 0, 5), #000011 10%, transparent 10%, transparent 20%); /* Gradient with light color */
     pointer-events: none; /* Ensures the gradient doesn't interfere with clicking */
   }
 .background-animation {
@@ -250,7 +248,7 @@ nav ul li a:hover::after {
 
 .typewriter {
     overflow: hidden;
-    border-right: .15em solid #ff009d;
+    border-right: .15em solid #ff5722;
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .15em;
@@ -262,10 +260,97 @@ nav ul li a:hover::after {
         border-color: transparent;
     }
     50% {
-        border-color: #ff00b3;
+        border-color: #ff5722;
     }
 }
 
+
+#chatbot-icon {
+    position: fixed;
+    top: 80%;
+    right: 30px;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(241, 33, 196, 0.822);
+    z-index: 1000;
+}
+
+#chatbot {
+    position: fixed;
+    bottom: 90px; /* Position it slightly above the chatbot icon */
+    right: 20px;
+    width: 300px; /* Smaller size */
+    height: 450px; /* Increased height */
+    border: none;
+    display: none; /* Hidden by default */
+    box-shadow: 0 4px 8px rgba(52, 39, 235, 0.753);
+    border-radius: 10px; /* Decorative rounded edges */
+    z-index: 1000;
+}
+
+#chatbot.show {
+    display: block;
+}
+
+#chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#chatbot-content {
+    padding: 10px;
+    height: calc(100% - 50px); /* Adjust height based on header */
+    overflow-y: auto;
+}
+
+/* Close Button */
+#chatbot-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+.chat-header, .chat-footer {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0; /* Rounded corners for header and footer */
+}
+
+.chat-footer {
+    border-radius: 0 0 10px 10px; /* Rounded corners for footer */
+}
+
+.chat-body {
+    padding: 10px;
+    background-color: #01020e;
+    overflow-y: auto;
+    height: calc(100% - 80px); /* Adjust height considering header and footer */
+}
+#chatbot-response {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    font-family: 'Arial', sans-serif;
+}
 
 /* ---------about------ */
 
@@ -286,9 +371,10 @@ nav ul li a:hover::after {
 }
 
 .about-col-1 img {
-    width: 100%;
+    width: 90%;
     height: 100%;
-    border-radius: 20px;
+    border-radius:20px;
+    margin: 4%;
 }
 
 .about-col-2 {
@@ -579,9 +665,12 @@ nav .fas {
     display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
     #header {
-        background-image: url(Images/background.gif.jpg);
+        background: url(images/3D\ Graphics.jpg) no-repeat center center;
+        background-size: cover;
+        filter: blur(1px);
+        z-index: -2;
     }
     .header-text {
         margin-top: 100%;
@@ -676,4 +765,144 @@ nav .fas {
 #backToTop.show {
     display: block;
 }
+.expertise-container {
+    position: absolute;
+    bottom: 15px; /* Distance from the bottom of the header */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Correct centering */
+    display: flex;
+    gap: 20px; /* Space between the expertise divs */
+    justify-content: center;
+    align-items: center;
+}
 
+/* Each expertise container */
+.expertise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Circle styling */
+.circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #000 60%, transparent 70%);
+    border: 8px solid hsl(327, 100%, 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 0, 34, 0.7);
+    animation: glowing 1.5s infinite;
+}
+
+.inner-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.percentage {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* Glowing effect */
+
+/* Keyframes for glowing effect */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 123, 255, 1);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+    }
+}
+
+/* Skill name below the circle */
+.skill-name {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    #header {
+        height: 90vh; /* Adjust header height */
+    }
+    .header-text h1 {
+        font-size: 2em;
+    }
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row; /* Horizontal layout */
+        position: relative;
+        background: transparent;
+    }
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 50%; /* Adjust about section layout */
+    }
+    .work-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .services-list div {
+        flex-basis: 45%; /* Adjust service box size */
+    }
+}
+
+/* Large screens (1024px to 1439px) */
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    #header {
+        height: 100vh; /* Full screen header */
+    }
+    .header-text h1 {
+        font-size: 2.5em;
+    }
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 50%;
+    }
+    .work-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for portfolio */
+    }
+    .services-list div {
+        flex-basis: 30%;
+    }
+}
+
+/* Extra large screens (min-width: 1440px) */
+@media only screen and (min-width: 1440px) {
+    .header-text h1 {
+        font-size: 3em; /* Larger font size */
+    }
+    .profile-pic {
+        width: 220px;
+        height: 220px;
+    }
+    .work-list {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for portfolio */
+    }
+    .services-list div {
+        flex-basis: 25%;
+    }
+}

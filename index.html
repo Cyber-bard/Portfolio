@@ -35,14 +35,54 @@
                 <div class="profile-pic">
                     <img src="images/Photo 1.jpeg" alt="Profile Picture">
                 </div>
-            <h3>Hi,there</h3>
-               <h1>I am <span class="typewriter" id="typewriter1"></span></h1>
-                        <p><br>Welcome to my portfolio.<br> I’m <span style="color: hwb(318 7% 24%);"><b>Antony Munene</b></span>, a dedicated software engineer and cybersecurity analyst with expertise in both frontend and backend development.<br> My work spans the full stack of application development, encompassing the design and implementation of robust and secure solutions. <br>Explore my projects to see how I integrate these skills to deliver exceptional results.</br></p>
+                <h3>Hi,there</h3>
+                <h1>I am <span class="typewriter" id="typewriter1"></span></h1>
+                <p><br>Welcome to my portfolio.<br> I’m <span style="color: hwb(318 7% 24%);"><b>Antony Munene</b></span>, a dedicated software engineer and cybersecurity analyst with expertise in both frontend and backend development.<br> My work spans the full stack of application development, encompassing the design and implementation of robust and secure solutions. <br>Explore my projects to see how I integrate these skills to deliver exceptional results.</br></p>
             </div>
         </div>
-        <div class="header-cta">
-            <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        </div>    
+        <div class="expertise-container">
+            <div class="expertise">
+                <div class="circle">
+                    <div class="inner-circle">
+                        <span class="percentage">94%</span>
+                    </div>
+                </div>
+                <div class="skill-name">Web Development</div>
+            </div>
+            <div class="expertise">
+                <div class="circle">
+                    <div class="inner-circle">
+                        <span class="percentage">90%</span>
+                    </div>
+                </div>
+                <div class="skill-name">App Design</div>
+            </div>
+            <div class="expertise">
+                <div class="circle">
+                    <div class="inner-circle">
+                        <span class="percentage">95%</span>
+                    </div>
+                </div>
+                <div class="skill-name">Cybersecurity</div>
+            </div>
+            <div class="expertise">
+                <div class="circle">
+                    <div class="inner-circle">
+                        <span class="percentage">96%</span>
+                    </div>
+                </div>
+                <div class="skill-name">Front-End dev</div>
+            </div>
+            <div class="expertise">
+                <div class="circle">
+                    <div class="inner-circle">
+                        <span class="percentage">95%</span>
+                    </div>
+                </div>
+                <div class="skill-name">UI/UX Design</div>
+            </div>
+            <!-- Add more skills as needed -->
+        </div>   
     </div>
     <div id="about">
         <div class="container">
@@ -189,47 +229,163 @@
             </ul>
         </div>
     </div>
+    <div id="chatbot-icon">
+        <i class="fas fa-comment-dots"></i> <!-- Chatbot icon replaced with Font Awesome comment dots icon -->
+    </div>
+    <div id="chatbot" class="chat-container">
+        <div class="chat-header">Assistant</div>
+        <div class="chat-body">
+            <div id="chatbot-content">
+                <p>Hello! I’m Cyberbard, your assistant. Feel free to ask me anything about my portfolio.</p>
+                <p><strong>Common Questions:</strong></p>
+                <ul>
+                    <li>1. What projects have you worked on?</li>
+                    <li>2. What services do you offer?</li>
+                    <li>3. How can I contact you?</li>
+                    <li>4. Where can I find your resume?</li>
+                    <li>5. Other</li>
+                </ul>
+                <p>If you need more detailed information, please visit the <a href="#contact">Contact</a> page or use the social links provided.</p>
+            </div>
+            <div id="chatbot-response"></div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Type a number or message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    
+    
+    <script>
+    const chatbotIcon = document.getElementById('chatbot-icon');
+    const chatbot = document.getElementById('chatbot');
+    const chatbotContent = document.getElementById('chatbot-content');
+    const chatbotResponse = document.getElementById('chatbot-response');
+    const userInput = document.getElementById('user-input');
+    let offsetX = 0, offsetY = 0, initialX, initialY;
+    let isDragging = false;
+    let dragThreshold = 5; // Minimum distance to qualify as a drag
+    const verticalOffset = 10; // Distance between icon and chatbot container
+
+    // Make the chatbot icon and container draggable together
+    chatbotIcon.onmousedown = (e) => {
+        e.preventDefault();
+        isDragging = false; // Reset drag state at start
+        initialX = e.clientX;
+        initialY = e.clientY;
+
+        document.onmousemove = onDrag;
+        document.onmouseup = stopDrag;
+    };
+
+    function onDrag(e) {
+        if (Math.abs(e.clientX - initialX) > dragThreshold || Math.abs(e.clientY - initialY) > dragThreshold) {
+            isDragging = true;
+
+            offsetX = initialX - e.clientX;
+            offsetY = initialY - e.clientY;
+            initialX = e.clientX;
+            initialY = e.clientY;
+
+            // Move the chatbot icon
+            chatbotIcon.style.top = (chatbotIcon.offsetTop - offsetY) + "px";
+            chatbotIcon.style.left = (chatbotIcon.offsetLeft - offsetX) + "px";
+
+            // Keep the chatbot container adjacent to the icon
+            chatbot.style.top = (chatbotIcon.offsetTop - chatbot.offsetHeight - verticalOffset) + "px";
+            chatbot.style.left = chatbotIcon.style.left;
+        }
+    }
+
+    function stopDrag() {
+        document.onmousemove = null;
+        document.onmouseup = null;
+    }
+
+    // Toggle chatbot visibility on click of the chatbot icon
+    chatbotIcon.onclick = function() {
+        if (!isDragging) {
+            chatbot.classList.toggle('show');
+        }
+        isDragging = false; // Reset dragging state after click
+    };
+
+    // Close chatbot container when clicking outside of it
+    document.onclick = function(event) {
+        if (!chatbotIcon.contains(event.target) && !chatbot.contains(event.target)) {
+            chatbot.classList.remove('show');
+        }
+    };
+
+    function handleQuestion(number) {
+    const responses = {
+        1: "I have developed various projects including a full-stack web application and an online quiz app. For more details, visit the Portfolio section or contact me directly.",
+        2: "I offer web design, app design, and coding services. Check the Services section for more information or contact me for custom needs.",
+        3: "You can reach me via the Contact section or through the social links provided.",
+        4: "My resume is available for download in the Contact section.",
+        5: "I’m sorry, I don’t have an answer for that. Please visit the <a href='#contact'>Contact</a> page. I will get back to you as soon as possible. If you need urgent assistance, please visit the Contact page for further assistance."
+    };
+
+    return responses[number] || "I’m sorry, I don’t have an answer for that. Please visit the <a href='#contact'>Contact</a> page for further assistance.";
+}
+
+function sendMessage() {
+    const message = userInput.value.trim();
+    let response;
+
+    if (!isNaN(message) && message > 0 && message < 6) {
+        // Handle number inputs
+        response = handleQuestion(parseInt(message));
+    } else {
+        response = "Please enter a valid number or message.";
+    }
+
+    chatbotResponse.innerHTML = response;
+    userInput.value = '';
+}
+
+</script>
+
     <script>
         const words1 = ['cyberbard.','a software engineer.', 'also a cybersecurity analyst.'];
         function typeWriter(element, words) {
-          let wordIndex = 0;
-          let letterIndex = 0;
-          let currentWord = words[wordIndex];
-      
-          function type() {
-            if (letterIndex < currentWord.length) {
-              element.textContent += currentWord.charAt(letterIndex);
-              letterIndex++;
-              setTimeout(type, 100);
-            } else {
-              setTimeout(() => {
-                deleteLetters();
-              }, 1000);
+            let wordIndex = 0;
+            let letterIndex = 0;
+            let currentWord = words[wordIndex];
+
+            function type() {
+                if (letterIndex < currentWord.length) {
+                    element.textContent += currentWord.charAt(letterIndex);
+                    letterIndex++;
+                    setTimeout(type, 100);
+                } else {
+                    setTimeout(() => {
+                        deleteLetters();
+                    }, 1000);
+                }
             }
-          }
-      
-          function deleteLetters() {
-            if (letterIndex > 0) {
-              element.textContent = currentWord.substring(0, letterIndex - 1);
-              letterIndex--;
-              setTimeout(deleteLetters, 50);
-            } else {
-              wordIndex = (wordIndex + 1) % words.length;
-              currentWord = words[wordIndex];
-              setTimeout(type, 500);
+
+            function deleteLetters() {
+                if (letterIndex > 0) {
+                    element.textContent = currentWord.substring(0, letterIndex - 1);
+                    letterIndex--;
+                    setTimeout(deleteLetters, 50);
+                } else {
+                    wordIndex = (wordIndex + 1) % words.length;
+                    currentWord = words[wordIndex];
+                    setTimeout(type, 500);
+                }
             }
-          }
-      
-          type();
+
+            type();
         }
-      
+
         typeWriter(document.getElementById('typewriter1'), words1);
-      </script>
-    <script>
+
         function openmenu() {
             document.getElementById("sidemenu").style.right = "0";
         }
-        
+
         function closemenu() {
             document.getElementById("sidemenu").style.right = "-200px";
         }
@@ -247,13 +403,7 @@
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
-    </script>
-    <div id="backToTop">
-        <a href="#header"><i class="fas fa-arrow-up"></i></a>
-    </div>
 
-    <!-- JavaScript to Show/Hide the Button -->
-    <script>
         window.addEventListener('scroll', function() {
             var header = document.getElementById('header');
             var backToTop = document.getElementById('backToTop');
@@ -265,6 +415,9 @@
             }
         });
     </script>
-    
+
+    <div id="backToTop">
+        <a href="#header"><i class="fas fa-arrow-up"></i></a>
+    </div>
 </body>
 </html>

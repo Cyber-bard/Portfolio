@@ -14,3 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+function openmenu() {
+        document.getElementById("sidemenu").style.right = "0";  // Slide in the menu
+    }
+
+    // Function to close the sidebar menu
+    function closemenu() {
+        document.getElementById("sidemenu").style.right = "-250px";  // Slide out the menu
+    }

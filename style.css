@@ -733,6 +733,8 @@ nav .fas {
 
     /* Fix expertise section (ratings) positioning */
     .expertise-container {
+        grid-template-columns: 1fr; /* One item per row on very small screens */
+        gap: 15px;
         flex-direction: column;
         /* Stack skills vertically */
         align-items: center;
@@ -1141,10 +1143,14 @@ body {
 
     /* Ensure skills section stacks properly */
     .expertise-container {
+        grid-template-columns: 1fr;
+        /* One item per row on very small screens */
+        gap: 15px;
         flex-direction: column;
         align-items: center;
         margin-top: 20px;
         filter: none;
+
     }
 
     .expertise {

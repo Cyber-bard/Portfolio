@@ -1143,10 +1143,9 @@ body {
 
     /* Ensure skills section stacks properly */
     .expertise-container {
-        grid-template-columns: 1fr;
-        /* One item per row on very small screens */
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         margin-top: 20px;
         filter: none;

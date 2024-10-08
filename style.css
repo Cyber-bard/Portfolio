@@ -26,6 +26,7 @@ body {
     flex-direction: column;
     text-align: center;
     /* Ensure content centers on mobile */
+    filter: none;
 }
 
 #header::before {
@@ -48,6 +49,7 @@ body {
     width: 100%;
     height: 20%; /* Height of the gradient overlay (adjust as needed) */
     pointer-events: none; /* Ensures the gradient doesn't interfere with clicking */
+    filter: none;
   }
 .background-animation {
     position: absolute;
@@ -58,6 +60,7 @@ body {
     z-index: -1;
     background: transparent;
     overflow: hidden;
+    filter: none;
 }
 
 .background-animation::before {
@@ -68,6 +71,7 @@ body {
     width: 300%;
     height: 300%;
     animation: starAnimation 10s linear infinite;
+    filter: none;
 }
 
 @keyframes starAnimation {
@@ -109,6 +113,7 @@ body {
     bottom: 20px; /* Distance from the bottom of the header */
     right: 20px;  /* Distance from the right of the header */
     z-index: 10;  /* Ensure it stays on top */
+    filter: none;
 }
 
 .btn-primary {
@@ -170,6 +175,7 @@ nav ul li {
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
+    filter: none;
 }
 
 nav ul li a {
@@ -177,6 +183,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     position: relative;
+    filter: none;
 }
 
 nav ul li a::after {
@@ -185,6 +192,7 @@ nav ul li a::after {
     height: 3px;
     background: hwb(0 3% 6%);
     position: absolute;
+    filter: none;
     left: 0;
     bottom: -6px;
     transition: 0.5s;
@@ -192,6 +200,7 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
+    filter: none;
 }
 
 .header-content {
@@ -200,6 +209,7 @@ nav ul li a:hover::after {
     align-items: center;
     text-align: center;
     color: white;
+    filter: none;
 }
 
 .profile-pic {
@@ -210,6 +220,7 @@ nav ul li a:hover::after {
     position: relative;
     margin-bottom: 20px;
     animation: transitionAnimation 5s infinite;
+    filter: none;
 }
 
 @keyframes transitionAnimation {
@@ -233,9 +244,11 @@ nav ul li a:hover::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: none;
 }
 
 .profile-pic:hover {
+    filter: none;
     transform: scale(1.1);
 }
 
@@ -247,14 +260,17 @@ nav ul li a:hover::after {
     /* Ensure it does not overflow */
     white-space: nowrap;
     overflow: hidden;
+    filter: none;
 }
 
 .header-text p {
+    filter: none;
     color: hsl(0, 78%, 95%);
 }
 
 .typewriter {
     white-space: nowrap;
+    filter: none;
     display: inline-block;
     max-width: 100%;
     /* Restrict the width */
@@ -687,6 +703,7 @@ nav .fas {
         /* Reduce margin */
         font-size: 16px;
         text-align: center;
+        filter: none;
         /* Center text on mobile */
     }
 
@@ -695,6 +712,7 @@ nav .fas {
         /* Smaller font size for mobile */
         white-space: normal;
         /* Allow the text to wrap */
+        filter: none;
     }
 
     .typewriter {
@@ -702,6 +720,7 @@ nav .fas {
         /* Ensure typewriter text wraps */
         font-size: 22px;
         /* Adjust size */
+        filter: none;
     }
 
     /* Make sure profile picture doesn't take too much space */
@@ -709,6 +728,7 @@ nav .fas {
         width: 150px;
         height: 150px;
         margin: 0 auto;
+        filter: none;
     }
 
     /* Fix expertise section (ratings) positioning */
@@ -718,10 +738,12 @@ nav .fas {
         align-items: center;
         margin-top: 20px;
         /* Add space between header text and skills */
+        filter: none;
     }
 
     .expertise {
         margin-bottom: 15px;
+        filter: none;
         /* Add spacing between skills */
     }
 
@@ -730,57 +752,55 @@ nav .fas {
         font-size: 25px;
     }
 
-/* Mobile Navigation Fix */
-        nav ul {
-            background: #ff5722;
-            position: fixed;
-            top: 0;
-            right: -250px;
-            /* Initially hidden on the right */
-            width: 200px;
-            height: 100vh;
-            padding-top: 50px;
-            z-index: 2;
-            transition: right 0.5s;
-        }
-    
-        nav ul li {
-            display: block;
-            margin: 25px;
-        }
-    
-        nav ul li a {
-            color: white;
-            /* Ensure links are visible */
-            text-decoration: none;
-            font-size: 18px;
-        }
-    
-        nav ul .fas.fa-times {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-    
-        /* Show the hamburger menu icon */
-        nav .fas.fa-bars {
-            display: block;
-            font-size: 25px;
-            color: white;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-        }
-    
-        /* When the menu is open, move it into view */
-        nav ul.open {
-            right: 0;
-            /* Menu slides in */
-        }
+    /* Mobile Navigation Fix */
+nav ul {
+    background: #ff5722;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Initially hidden on the right */
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+}
+
+nav ul li {
+    display: block;
+    margin: 25px;
+}
+
+nav ul li a {
+    color: white; /* Ensure links are visible */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul .fas.fa-times {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Show the hamburger menu icon */
+nav .fas.fa-bars {
+    display: block;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* When the menu is open, move it into view */
+nav ul.open {
+    right: 0; /* Menu slides in */
+}
+
 
     /* Ensure title sizing fits smaller screens */
     .sub-title {
@@ -887,6 +907,7 @@ nav .fas {
     justify-content: center;
     box-shadow: 0 0 10px rgba(255, 0, 34, 0.7);
     animation: glowing 1.5s infinite;
+    filter: none;
 }
 
 .inner-circle {
@@ -898,12 +919,14 @@ nav .fas {
     display: flex;
     align-items: center;
     justify-content: center;
+    filter: none;
 }
 
 .percentage {
     color: white;
     font-size: 24px;
     font-weight: bold;
+    filter: none;
 }
 
 
@@ -927,6 +950,7 @@ nav .fas {
     margin-top: 10px;
     font-weight: bold;
     font-size: 16px;
+    filter: none;
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
     #header {
@@ -934,10 +958,12 @@ nav .fas {
     }
     .header-text h1 {
         font-size: 2em;
+        filter: none;
     }
     .profile-pic {
         width: 180px;
         height: 180px;
+        filter: none;
     }
     nav ul {
         display: flex;
@@ -1035,29 +1061,34 @@ body {
         padding: 20px;
         flex-direction: column;
         text-align: center;
+        filter: none;
     }
 
     .header-text {
         margin-top: 20px;
         font-size: 16px;
+        filter: none;
     }
 
     .header-text h1 {
         font-size: 24px;
         white-space: normal;
         /* Allow wrapping */
+        filter: none;
     }
 
     .typewriter {
         white-space: normal;
         /* Ensure the typewriter wraps */
         font-size: 22px;
+        filter: none;
     }
 
     .profile-pic {
         width: 150px;
         height: 150px;
         margin: 0 auto;
+        filter: none;
     }
 
     /* Navigation Menu Fix for Mobile */
@@ -1072,6 +1103,7 @@ body {
         transition: right 0.5s;
         text-align: left;
         /* Align text in menu */
+        filter: none;
     }
 
     nav ul li {
@@ -1094,6 +1126,7 @@ body {
         top: 20px;
         right: 20px;
         cursor: pointer;
+        filter: none;
     }
 
     /* Ensure the close icon works */
@@ -1103,6 +1136,7 @@ body {
         left: 20px;
         color: white;
         font-size: 24px;
+        filter: none;
     }
 
     /* Ensure skills section stacks properly */
@@ -1110,16 +1144,19 @@ body {
         flex-direction: column;
         align-items: center;
         margin-top: 20px;
+        filter: none;
     }
 
     .expertise {
         margin-bottom: 15px;
+        filter: none;
     }
 
     /* Adjust the paragraph and skills for mobile */
     .header-text p {
         margin-bottom: 30px;
         font-size: 16px;
+        filter: none;
     }
 }
 

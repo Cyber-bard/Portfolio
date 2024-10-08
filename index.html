@@ -415,12 +415,12 @@ function sendMessage() {
                 backToTop.classList.remove('show');
             }
         });
-        function openmenu() {
-                    document.getElementById("sidemenu").classList.add("open");
+    function openmenu() {
+        document.getElementById("sidemenu").style.right = "0";  // Slide in the menu from the right
     }
 
-                function closemenu() {
-                    document.getElementById("sidemenu").classList.remove("open");
+    function closemenu() {
+        document.getElementById("sidemenu").style.right = "-250px";  // Slide the menu back offscreen
     }
     </script>
 

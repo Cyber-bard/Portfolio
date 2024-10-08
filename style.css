@@ -730,30 +730,57 @@ nav .fas {
         font-size: 25px;
     }
 
-    /* Fix navigation menu */
-    nav ul {
-        background: #ff5722;
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-        transition: right 0.5s;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 25px;
-    }
-
-    nav ul .fas {
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
-    }
+/* Mobile Navigation Fix */
+        nav ul {
+            background: #ff5722;
+            position: fixed;
+            top: 0;
+            right: -250px;
+            /* Initially hidden on the right */
+            width: 200px;
+            height: 100vh;
+            padding-top: 50px;
+            z-index: 2;
+            transition: right 0.5s;
+        }
+    
+        nav ul li {
+            display: block;
+            margin: 25px;
+        }
+    
+        nav ul li a {
+            color: white;
+            /* Ensure links are visible */
+            text-decoration: none;
+            font-size: 18px;
+        }
+    
+        nav ul .fas.fa-times {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+    
+        /* Show the hamburger menu icon */
+        nav .fas.fa-bars {
+            display: block;
+            font-size: 25px;
+            color: white;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+    
+        /* When the menu is open, move it into view */
+        nav ul.open {
+            right: 0;
+            /* Menu slides in */
+        }
 
     /* Ensure title sizing fits smaller screens */
     .sub-title {

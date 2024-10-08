@@ -23,6 +23,9 @@ body {
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    flex-direction: column;
+    text-align: center;
+    /* Ensure content centers on mobile */
 }
 
 #header::before {
@@ -236,10 +239,14 @@ nav ul li a:hover::after {
     transform: scale(1.1);
 }
 
+/* Typewriter Fix on Mobile */
 .header-text h1 {
     font-size: 2.5em;
     color: #ff5722;
     max-width: 100%;
+    /* Ensure it does not overflow */
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .header-text p {
@@ -247,11 +254,11 @@ nav ul li a:hover::after {
 }
 
 .typewriter {
-    overflow: hidden;
-    border-right: .15em solid #ff5722;
     white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15em;
+    display: inline-block;
+    max-width: 100%;
+    /* Restrict the width */
+    border-right: .15em solid #ff5722;
     animation: blink-caret .8s step-end infinite;
 }
 
@@ -671,18 +678,59 @@ nav .fas {
         background-size: cover;
         filter: blur(1px);
         z-index: -2;
+        height: auto;
+        /* Ensure height adjusts on mobile */
     }
+
     .header-text {
-        margin-top: 100%;
+        margin-top: 20px;
+        /* Reduce margin */
         font-size: 16px;
+        text-align: center;
+        /* Center text on mobile */
     }
+
     .header-text h1 {
-        font-size: 30px;
+        font-size: 24px;
+        /* Smaller font size for mobile */
+        white-space: normal;
+        /* Allow the text to wrap */
     }
+
+    .typewriter {
+        white-space: normal;
+        /* Ensure typewriter text wraps */
+        font-size: 22px;
+        /* Adjust size */
+    }
+
+    /* Make sure profile picture doesn't take too much space */
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    /* Fix expertise section (ratings) positioning */
+    .expertise-container {
+        flex-direction: column;
+        /* Stack skills vertically */
+        align-items: center;
+        margin-top: 20px;
+        /* Add space between header text and skills */
+    }
+
+    .expertise {
+        margin-bottom: 15px;
+        /* Add spacing between skills */
+    }
+
     nav .fas {
         display: block;
         font-size: 25px;
     }
+
+    /* Fix navigation menu */
     nav ul {
         background: #ff5722;
         position: fixed;
@@ -694,37 +742,48 @@ nav .fas {
         z-index: 2;
         transition: right 0.5s;
     }
+
     nav ul li {
         display: block;
         margin: 25px;
     }
+
     nav ul .fas {
         position: absolute;
         top: 25px;
         left: 25px;
         cursor: pointer;
     }
+
+    /* Ensure title sizing fits smaller screens */
     .sub-title {
-        font-size: 40px;
+        font-size: 32px;
     }
+
     .about-col-1,
     .about-col-2 {
         flex-basis: 100%;
     }
+
     .about-col-1 {
         margin-bottom: 30px;
     }
+
     .about-col-2 {
         font-size: 14px;
     }
+
+    /* Reduce tab links font size */
     .tab-links {
         font-size: 16px;
         margin-right: 20px;
     }
+
     .contact-left,
     .contact-right {
         flex-basis: 100%;
     }
+
     .copyright {
         font-size: 14px;
     }
@@ -766,14 +825,19 @@ nav .fas {
     display: block;
 }
 .expertise-container {
-    position: absolute;
-    bottom: 15px; /* Distance from the bottom of the header */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Correct centering */
+    position: relative;
+    bottom: 0;
+    /* Adjust the positioning */
+    left: 0;
+    right: 0;
     display: flex;
-    gap: 20px; /* Space between the expertise divs */
+    flex-direction: row;
+    /* Stack horizontally */
+    gap: 10px;
+    /* Spacing between skills */
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 /* Each expertise container */
@@ -937,82 +1001,114 @@ body {
 
 /* Media Queries for Mobile Phones (up to 767px) */
 @media only screen and (max-width: 767px) {
+
+    /* Header Fix for Mobile */
+    #header {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
     .header-text {
-        margin-top: 100%;
+        margin-top: 20px;
         font-size: 16px;
     }
 
     .header-text h1 {
-        font-size: 30px;
+        font-size: 24px;
+        white-space: normal;
+        /* Allow wrapping */
     }
 
-    nav .fas {
-        display: block;
-        font-size: 25px;
+    .typewriter {
+        white-space: normal;
+        /* Ensure the typewriter wraps */
+        font-size: 22px;
     }
 
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    /* Navigation Menu Fix for Mobile */
     nav ul {
-        background: #ff5722;
         position: fixed;
+        right: -250px;
         top: 0;
-        right: -200px;
         width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
+        background: #ff5722;
+        height: 100%;
+        padding-top: 60px;
         transition: right 0.5s;
+        text-align: left;
+        /* Align text in menu */
     }
 
     nav ul li {
         display: block;
-        margin: 25px;
+        margin: 15px 0;
     }
 
-    .sub-title {
-        font-size: 40px;
+    nav ul li a {
+        font-size: 18px;
+        color: white;
+        padding: 10px 20px;
     }
 
-    .about-col-1,
-    .about-col-2 {
-        flex-basis: 100%;
+    /* Ensure the hamburger menu icon shows */
+    nav .fas.fa-bars {
+        display: block;
+        font-size: 24px;
+        color: white;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
     }
 
-    .about-col-1 {
+    /* Ensure the close icon works */
+    nav ul .fas.fa-times {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-size: 24px;
+    }
+
+    /* Ensure skills section stacks properly */
+    .expertise-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .expertise {
+        margin-bottom: 15px;
+    }
+
+    /* Adjust the paragraph and skills for mobile */
+    .header-text p {
         margin-bottom: 30px;
-    }
-
-    .about-col-2 {
-        font-size: 14px;
-    }
-
-    .tab-links {
         font-size: 16px;
-        margin-right: 20px;
-    }
-
-    .contact-left,
-    .contact-right {
-        flex-basis: 100%;
-    }
-
-    .copyright {
-        font-size: 14px;
     }
 }
 
-/* Media Queries for Tablets (768px to 1023px) */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    #header {
-        height: 90vh;
-    }
 
+    /* Tablet specific fixes */
     .header-text h1 {
         font-size: 2em;
     }
 
-    .profile-pic {
-        width: 180px;
-        height: 180px;
+    .typewriter {
+        font-size: 22px;
+    }
+
+    .expertise-container {
+        gap: 15px;
     }
 
     nav ul {
@@ -1020,19 +1116,18 @@ body {
         flex-direction: row;
         position: relative;
         background: transparent;
+        top: auto;
+        height: auto;
     }
 
-    .about-col-1,
-    .about-col-2 {
-        flex-basis: 50%;
+    nav ul li {
+        display: inline-block;
+        margin: 0 10px;
     }
 
-    .work-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .services-list div {
-        flex-basis: 45%;
+    nav ul li a {
+        font-size: 16px;
+        color: hsl(325, 87%, 58%);
     }
 }
 

@@ -27,10 +27,11 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <i class="fas fa-times" onclick="closemenu()"></i>
+                    <i class="fas fa-times" onclick="closemenu()"></i> <!-- Close menu icon -->
                 </ul>
-                <i class="fas fa-bars" onclick="openmenu()"></i>
+                <i class="fas fa-bars" onclick="openmenu()"></i> <!-- Hamburger icon -->
             </nav>
+
             <div class="header-text">
                 <div class="profile-pic">
                     <img src="images/Photo 1.jpeg" alt="Profile Picture">
@@ -414,6 +415,13 @@ function sendMessage() {
                 backToTop.classList.remove('show');
             }
         });
+        function openmenu() {
+                    document.getElementById("sidemenu").classList.add("open");
+    }
+
+                function closemenu() {
+                    document.getElementById("sidemenu").classList.remove("open");
+    }
     </script>
 
     <div id="backToTop">
